@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noora Almajaideh | System Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-pearl: #FBFCF8;
+            --accent: #740A03;
+            --grid-major: rgba(0, 0, 0, 0.06);
+            --grid-minor: rgba(0, 0, 0, 0.02);
+            --marker-color: rgba(116, 10, 3, 0.1);
+        }
+        
+        .dark {
+            --bg-pearl: #0a0a0a;
+            --accent: #740A03;
+            --grid-major: rgba(255, 255, 255, 0.05);
+            --grid-minor: rgba(255, 255, 255, 0.02);
+            --marker-color: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-pearl);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+        
+        .arch-grid {
+            background-image: 
+                linear-gradient(var(--grid-major) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+                linear-gradient(var(--grid-minor) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+        }
+
+        .arch-grid::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--marker-color) 1px, transparent 0);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .noise::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .font-mono { font-family: 'Space Mono', monospace; }
+        .font-script { font-family: 'Dancing Script', cursive; }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .scanline {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: rgba(116, 10, 3, 0.08);
+            animation: scanline 10s linear infinite;
+            pointer-events: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="noise arch-grid">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Phoenix-Pub',
     description: 'Dar Al-Feneq Library - A full-stack publishing and e-commerce platform managing inventory, categories, and customer orders.',
-    link: 'alfeneq.com',
+    link: 'https://alfeneq.com',
     tags: ['E-commerce', 'Full-stack', 'Management'],
     longDescription: 'A comprehensive digital marketplace for Dar Al-Feneq Library. This system handles complex inventory management for diverse book categories and integrates a secure checkout flow for readers.',
     keyFeatures: [

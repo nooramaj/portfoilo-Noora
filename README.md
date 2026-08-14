@@ -1,4 +1,4 @@
-# Noora Almajaideh — Portfolio
+# Norah Almajaideh — Portfolio
 
 Personal portfolio website for **Noora Almajaideh**, Software Engineer and System Architect.
 
